@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ver_imagenes{
+    margin: auto;
+    width: 60%;
+    height: 50vh;
+    background-color: brown;
+}
+.tienda{
+    width: 60%;
+    margin: auto;
+    height: 40vh;
+    margin-top: 5vh;
+    background-color: blueviolet;
+}
