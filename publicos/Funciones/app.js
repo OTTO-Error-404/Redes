@@ -195,3 +195,4 @@ closeCreateAccountModal();
 alert('La cuenta ya existe o el nombre está vacío');
 }
 }
+
