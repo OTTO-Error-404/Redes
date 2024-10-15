@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfica de Gastos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <div class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="menu-content">
+                <a href="#" onclick="showChart('expenses')">Gastos</a>
+                <a href="#" onclick="showChart('income')">Ingresos</a>
+            </div>
+        </div>
+        <div class="logo">
+            <img src="./Logo e-Wallet.png" alt="Logo" height="85vh">
+        </div>
+        <div class="account-menu">
+            <div class="account-icon">
+                <img src="Logo Gato.png" height="75vh" alt="Account Icon">
+            </div>
+            <div class="account-menu-content" id="accountMenuContent">
+                <!-- Las cuentas se llenarán aquí -->
+                <a href="#" onclick="openCreateAccountModal()">Crear Cuenta</a>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="chart-container">
+            <canvas id="myChart" class="w-full h-full"></canvas>
+            <div id="totalExpenses" class="total-expenses"></div>
+        </div>
+        <div class="add-button" onclick="openAddDataModal()">+</div>
+        <div class="history-container">
+            <div class="history-header">
+                <h2>Historial de la Gráfica</h2>
+                <hr>
+            </div>
+            <ul id="chartDataList">
+                <!-- Los datos del historial se llenarán aquí -->
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Gráfica de Gastos. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Modal for adding data -->
+    <div id="addDataModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddDataModal()">&times;</span>
+            <h2>Agregar Gasto</h2>
+            <label for="newLabel">Nombre del Gasto:</label>
+            <input type="text" id="newLabel" name="newLabel"><br>
+            <label for="newValue">Valor del Gasto:</label>
+            <input type="number" id="newValue" name="newValue"><br>
+            <button onclick="addData()">Agregar</button>
+        </div>
+    </div>
+
+    <!-- Modal for creating account -->
+    <div id="createAccountModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCreateAccountModal()">&times;</span>
+            <h2>Crear Cuenta</h2>
+            <label for="accountName">Nombre de la Cuenta:</label>
+            <input type="text" id="accountName" name="accountName"><br>
+            <button onclick="createAccount()">Crear</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./index.js"></script>
